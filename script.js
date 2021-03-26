@@ -25,5 +25,4 @@ function showSlide(x){
     imgId[x].style.display = "block";
     dotId[x].style.color = "white";
     dotId[x].style.fontSize = "150px";
-    dotId[x].style.transform = "translate(10px)";
 }

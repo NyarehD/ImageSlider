@@ -69,8 +69,6 @@ span.dot{
     font-size: 100px;
     cursor: pointer;
     transition: 500ms;
-    width: 25px;
-    height: 30px;
     margin: 0 5px;
 }
 span.dot:hover{
