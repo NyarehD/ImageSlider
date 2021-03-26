@@ -5,102 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slide</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <style>
-        *{
-            box-sizing: border-box;
-        }
-        html{
-            width: 100%;
-        }
-        .img-container{
-            padding: 0;
-            display: flex;
-            vertical-align: center;
-            justify-content: space-around;
-            align-items: center;
-        }
-        .mySlide1{
-            display: none;‌
-            width: 100%;
-            height: auto;
-            padding: 0px;
-        }
-        .mySlide1 > img {
-            width: 100%;
-            border: 1px solid black;
-        }
-        .previousBtn, .nextBtn{
-            width: 60px;
-            height: 60px;
-            font-size: 40px;
-            font-weight: bolder;
-            margin: 0;
-            cursor: pointer;
-            color:rgba(255, 255, 255, 0.863);
-            position: absolute;
-            padding: 10px;
-            text-shadow: 1px 1px rgb(77, 77, 77);
-        }
-        .previousBtn:hover, .nextBtn:hover{
-            text-shadow: 3px 3px rgb(77, 77, 77);
-            transition: 0.3s;
-        }
-        .previousBtn:active{
-            left: 5px;
-        }
-        .nextBtn:active{
-            right: 5px;
-        }
-        .previousBtn{
-            margin-right: -25px;
-            z-index: 1;
-            left: 10px;
-            top: 300px;
-        }
-        .nextBtn{
-            z-index: 1;
-            margin-left: -25px;
-            right: 10px;
-            top: 300px;
-        }
-        .dot-container{
-            align-self: flex-end;
-            position: absolute;
-            justify-self: baseline;
-            bottom: -70px;
-        }
-        .dot{
-            width: 30px;
-            height: 30px;
-            color: rgb(119, 119, 119);
-            font-size: 100px;
-            cursor: pointer;
-        }
-        .dot:hover{
-            font-size: 150px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 style="text-align: center;">Images</h1>
-    <div class="img-container"> 
+    <div class="img-container">
         <i class="fas fa-arrow-circle-left previousBtn" onclick="changeWithButton(-1)"></i>
-        <div class="mySlide1">
+        <div class="mySlide">
             <img src="img/Screenshot (16).png" alt="idk">
         </div>
-        <div class="mySlide1">
+        <div class="mySlide">
             <img src="img/Screenshot (32).png" alt="idk">
         </div>
-        <div class="mySlide1">
+        <div class="mySlide">
             <img src="img/Screenshot (25).png" alt="idk">
         </div>
-        <div class="mySlide1">
+        <div class="mySlide">
             <img src="img/Screenshot (61).png" alt="idk">
         </div>
-        <div class="mySlide1">
+        <div class="mySlide">
             <img src="img/Screenshot (64).png" alt="idk">
         </div>
-        <div class="mySlide1">
+        <div class="mySlide">
             <img src="img/Screenshot (72).png" alt="idk">
         </div>
         <div class="dot-container">
@@ -113,51 +39,7 @@
         </div>
         <i class="fas fa-arrow-circle-right nextBtn" onclick="changeWithButton(+1)"></i>
     </div>
-    <script>
-        let slideIndex = 0;
-        let imgId = document.getElementsByClassName('mySlide1');
-        let dotId = document.getElementsByClassName('dot');
-        showSlide(slideIndex);
-        // For changing images with button
-        function changeWithButton(x){
-            slideIndex += x;
-            if(slideIndex < 0){
-                slideIndex = imgId.length-1;
-            }else if(slideIndex >= imgId.length){
-                slideIndex = 0;
-            }
-            showSlide(slideIndex);
-            console.log(slideIndex);
-        }
-        // For showing images
-        function showSlide(x){
-            // Disabling other image to be shown and dim the color of dots
-            for( var i = 0; i<imgId.length; i++){
-                imgId[i].style.display = "none";
-                dotId[i].style.color = "rgb(119, 119, 119)";
-                dotId[i].style.fontSize = "100px";
-            }
-            // Showing the image and highlight the current dot
-            imgId[x].style.display = "block";
-            dotId[x].style.color = "white";
-            dotId[x].style.fontSize = "150px";
-        }
-        // function setIndex(i){
-        //     showSlide(slideIndex += i);
-        // }
-        // function showSlide(x){
-        //     let imgId = document.getElementsByClassName('mySlide1');
-        //     if (x >= imgId.length){
-        //         slideIndex=0;
-        //     }else if (x < 0){
-        //         slideIndex = imgId.length-1;
-        //     }
-        //     for(var i = 0; i<imgId.length; i++){
-        //         imgId[i].style.display = "none";
-        //     }                                 
-        //     imgId[slideIndex].style.display = "block";
-        //     console.log(slideIndex);
-        // }
+    <script src="script.js">
     </script>
 </body>
 </html>
